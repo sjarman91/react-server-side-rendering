@@ -9,7 +9,6 @@ require('node-jsx').install()
 const React = require('react');
 const { renderToString } = require('react-dom/server')
 const { createStore } = require('redux');
-const { Provider } = require('react-redux');
 const { reducer } = require('./browser/react/redux')
 const puppyData = require('./puppy').puppyData
 
@@ -32,14 +31,14 @@ app.get('/api/puppies', function (req, res) {
 app.use(handleRender)
 
 // server listening!
-app.listen(3000, function () {
-  console.log('Server listening on port 3000...');
+app.listen(1337, function () {
+  console.log('Server listening on port 1337...');
 });
 
 // server side logic
 function renderFullPage(html, preloadedState) {
   return (
-    '<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width initial-scale=1.0"><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" /><script src="public/bundle.js" defer></script><title>Puppy Likes</title></head><body><div id="app"><div>' + html + '</div><script>window.__PRELOADED_STATE__ =' + JSON.stringify(preloadedState) +'</script></body></html>'
+    '<!DOCTYPE html><html><head><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" /><script src="public/bundle.js" defer></script><title>Server Side</title></head><body><div id="app"><div>' + html + '</div><script>window.__PRELOADED_STATE__ =' + JSON.stringify(preloadedState) +'</script></body></html>'
     )
 }
 
