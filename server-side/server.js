@@ -1,6 +1,6 @@
 'use strict';
 
-/* ---------------------- TYPICAL SERVER SIDE CODE ---------------------*/
+/* ------------------------ TYPICAL EXPRESS CODE ----------------------- */
 
 const express = require('express');
 const volleyball = require('volleyball');

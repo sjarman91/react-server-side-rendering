@@ -2,7 +2,7 @@
 
 const {createStore, applyMiddleware, combineReducers} = require('redux');
 const thunkMiddleware = require('redux-thunk').default;
-const axios = require('axios')
+
 
 // constants
 const SET_PUPPIES = 'SET_PUPPIES'
@@ -45,3 +45,14 @@ const middleware = applyMiddleware(thunkMiddleware)
 const store = createStore(reducer, middleware);
 
 module.exports = {store, like, reducer}
+
+
+
+
+
+
+
+
+
+
+const axios = require('axios')
