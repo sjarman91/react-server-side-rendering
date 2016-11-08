@@ -12,8 +12,12 @@ app.use('/public', express.static('public'));
 
 // send index.html
 const indexPath = __dirname + '/browser/index.html'
-app.get('/', (req, res) =>{
+app.get('/client', (req, res) =>{
   res.sendFile(indexPath)
+})
+
+app.get('/', (req, res) =>{
+  res.send('Page cleared.')
 })
 
 app.get('/api/puppies', function (req, res) {

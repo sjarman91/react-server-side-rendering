@@ -18,6 +18,7 @@ let preloadedState = {puppies: []}
 
 // allows us to avoid 'window is not defined' on the server
 if (typeof(window) !== 'undefined') {
+  console.log('grabbing state off window')
   preloadedState = window.__PRELOADED_STATE__
 }
 
